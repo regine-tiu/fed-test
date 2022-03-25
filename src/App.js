@@ -1,7 +1,7 @@
 
 import useFetchData from './hooks/useFetchData.js'
 import logo from './logo.svg';
-import './App.sass';
+import './global.sass';
 
 
 function App() {
@@ -15,13 +15,11 @@ function App() {
   console.log(categories);
 
   return (
-    <div className="App">
-      <header className="App-header">
-       
+    <div className="page">
+      <header className="page-header">
+       <h1>Work</h1>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        
         <a
           className="App-link"
           href="https://reactjs.org"
