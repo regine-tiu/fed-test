@@ -15,7 +15,7 @@ const useFetchData = (endpoint) => {
     };
 
     fetchData();
-  }, []);
+  },);
 
   return {
     data,
