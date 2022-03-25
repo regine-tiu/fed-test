@@ -1,7 +1,7 @@
 
 import useFetchData from './hooks/useFetchData.js'
 import logo from './logo.svg';
-import './App.css';
+import './App.sass';
 
 
 function App() {
