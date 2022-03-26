@@ -27,6 +27,7 @@ p
 
 button 
   color: $main-white
+  cursor: pointer
   background-color: transparent
   border: 2px solid $main-white
   font-family: $main-font
@@ -47,13 +48,8 @@ ul
   text-transform: uppercase
 
   li
-    border: 1px solid $bkg-black
-    padding: 5px 20px
-    margin-right: 2%
-    list-style: none  
-
-    &:hover, &:active
-      border: 1px solid $main-white
+    margin-right: 1%
+    list-style: none 
 
 hr
   border-style: solid    
@@ -61,6 +57,14 @@ hr
 // Main App Styles
 .page-wrapper
   padding: 0 5%
+
+.cat-btn
+  border: 1px solid $bkg-black
+  padding: 5px 20px
+  
+  &:hover, &:active
+      border: 1px solid $main-white
+
 
 .cat-after-line
   margin-top: 1em

@@ -36,7 +36,7 @@ return (
         <h1>Work</h1>
         </header>
         <ul className='cat-row'>
-          {cat?.map(cat => <button className='cat-button' key={cat.id} onClick={() => setLabel(cat.slug)}>{cat.title}</button>)}
+          {cat?.map(cat => <li><button className='cat-btn' key={cat.id} onClick={() => setLabel(cat.slug)}>{cat.title}</button></li>)}
         </ul>
         <hr className='cat-after-line'></hr>
         <div className='project-gallery'>
