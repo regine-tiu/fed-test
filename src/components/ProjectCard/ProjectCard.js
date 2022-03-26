@@ -5,7 +5,8 @@ const ProjectCard = ({project}) => {
     const { 
         proj_card, 
         thumbnail, 
-        proj_info, 
+        proj_info,
+        line_after_slug, 
         proj_text, 
         action_btn } 
         = styles;
@@ -17,6 +18,7 @@ const ProjectCard = ({project}) => {
                 <div className="cat-label">
                     <h3>{project.categories[0].title}</h3>
                 </div>
+                <hr className={line_after_slug}></hr>
                 <div className={proj_text}>
                     <h2>{project.title}</h2>
                     <p>{project.excerpt}</p>
