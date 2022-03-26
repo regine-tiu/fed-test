@@ -1,5 +1,6 @@
 import Button from "../Button"
 import styles from "./ProjectCard.module.sass"
+import placeholder_img from "../../assets/placeholder-image.jpg"
 
 const ProjectCard = ({project}) => {
     const { 
@@ -14,7 +15,10 @@ const ProjectCard = ({project}) => {
 
     return (
         <div className={proj_card}>
-            <img src={project.thumbnail} alt="project thumbnail" className={thumbnail}/>
+            <img src={project.thumbnail ? project.thumbnail:placeholder_img} 
+                alt="project thumbnail" 
+                className={thumbnail} />
+
             <div className={proj_info}>
                 <div className="cat-label">
                     <h3>{project.categories[0].title}</h3>
