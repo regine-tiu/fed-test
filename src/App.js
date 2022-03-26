@@ -3,7 +3,6 @@ import './global.sass';
 import header_asset from "./assets/asset2.svg"
 import ProjectCard from './components/ProjectCard';
 
-
 const case_studies_ep = process.env.REACT_APP_CASE_STUDIES;
 const cat_ep = process.env.REACT_APP_CATEGORIES;
 
@@ -18,16 +17,17 @@ function ProjectPage() {
   return (
     <div className='page'>
       <img src={header_asset} alt=""/> 
-      <div className="content-wrapper">
-      <header className="page-header">
-       <h1>Work</h1>
-      </header>
-      <ul className='cat-row'>
-        {cat_arr.map(cat => <li>{cat.title}</li>)}
-      </ul>
-      <div className='project-gallery'>
-         {cs_arr.map(project => <div className='project-card'><img src={project.thumbnail} alt="project thumbnail"/></div>)}
-       </div>
+      <div className="page-wrapper">
+        <header className="page-header">
+        <h1>Work</h1>
+        </header>
+        <ul className='cat-row'>
+          {cat_arr.map(cat => <li>{cat.title}</li>)}
+        </ul>
+        <hr className='cat-after-line'></hr>
+        <div className='project-gallery'>
+          {cs_arr.map(project => <ProjectCard project={project} />)}
+        </div>
       </div>
     </div>
   );
