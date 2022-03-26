@@ -1,16 +1,27 @@
 import Button from "../Button"
+import styles from "./ProjectCard.module.sass"
 
 const ProjectCard = ({project}) => {
-    // const {project-card, project-text} = styles;
+    const { 
+        proj_card, 
+        thumbnail, 
+        proj_info, 
+        proj_text, 
+        action_btn } 
+        = styles;
 
     return (
-        <div className="project-card">
-            <img src={project.thumbnail} alt="project thumbnail"/>
-            <div className="project-text">
+        <div className={proj_card}>
+            <img src={project.thumbnail} alt="project thumbnail" className={thumbnail}/>
+            <div className={proj_info}>
                 <div className="cat-label">
-                    <h2>{project.title}</h2>
+                    <h3>{project.categories[0].title}</h3>
                 </div>
-                <div classname="action-btn">
+                <div className={proj_text}>
+                    <h2>{project.title}</h2>
+                    <p>{project.excerpt}</p>
+                </div>
+                <div classname={action_btn}>
                     <Button />
                 </div>
             </div>
