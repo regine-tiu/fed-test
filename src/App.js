@@ -1,7 +1,7 @@
 
 import useFetchData from './hooks/useFetchData.js'
-import logo from './logo.svg';
 import './global.sass';
+import header_asset from "./assets/asset2.svg"
 
 
 function App() {
@@ -15,20 +15,16 @@ function App() {
   console.log(categories);
 
   return (
-    <div className="page">
+    <div className='page'>
+      <img src={header_asset} alt=""/> 
+      <div className="content-wrapper">
       <header className="page-header">
        <h1>Work</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+
+      
+      
+      </div>
     </div>
   );
 }
