@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import useFetchData from './hooks/useFetchData.js'
 import './global.sass';
 import header_asset from "./assets/asset2.svg"
@@ -12,9 +13,22 @@ function ProjectPage() {
   const cs_arr = cs_data['data']['case-studies']
   const cat_arr = cat_data['data']['categories']
 
- console.log(cs_arr)
+  const [label, setLabel] = useState("all")
 
-  return (
+  const [cat, setCat] = useState([])
+
+  const [activeCS, setActiveCS] = useState([])
+
+  useEffect(() => { 
+   setActiveCS( cs_arr?.filter( cs => cs.categories[0].slug === label))
+  },[label]);
+
+  useEffect(() => {
+    setCat(cat_arr)
+    setActiveCS(cs_arr)
+  },[]);
+
+return (
     <div className='page'>
       <img src={header_asset} alt=""/> 
       <div className="page-wrapper">
@@ -22,11 +36,11 @@ function ProjectPage() {
         <h1>Work</h1>
         </header>
         <ul className='cat-row'>
-          {cat_arr.map(cat => <li>{cat.title}</li>)}
+          {cat?.map(cat => <button className='cat-button' key={cat.id} onClick={() => setLabel(cat.slug)}>{cat.title}</button>)}
         </ul>
         <hr className='cat-after-line'></hr>
         <div className='project-gallery'>
-          {cs_arr.map(project => <ProjectCard project={project} />)}
+          {activeCS?.map(project => <ProjectCard project={project} key={project.id} />)}
         </div>
       </div>
     </div>
