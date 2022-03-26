@@ -1,5 +1,4 @@
-import arrow from "../../src/assets/arrow-icon.svg"
-// import styles from './Button.module.sass';
+import arrow from "../../assets/arrow-icon.svg"
 
 const Button = () => {
     return (
