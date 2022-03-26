@@ -1,6 +1,7 @@
 import useFetchData from './hooks/useFetchData.js'
 import './global.sass';
 import header_asset from "./assets/asset2.svg"
+import ProjectCard from './components/ProjectCard';
 
 
 const case_studies_ep = process.env.REACT_APP_CASE_STUDIES;
@@ -21,9 +22,12 @@ function ProjectPage() {
       <header className="page-header">
        <h1>Work</h1>
       </header>
+      <ul className='cat-row'>
+      {cat_arr.map(cat => <li>{cat.title}</li>)}
+      </ul>
       <div className='project-gallery'>
-        {cs_arr.map(project => <div className='project-card'><img src={project.thumbnail} alt="project thumbnail"/></div>)}
-      </div>
+         {cs_arr.map(project => <div className='project-card'><img src={project.thumbnail} alt="project thumbnail"/></div>)}
+       </div>
       </div>
     </div>
   );
