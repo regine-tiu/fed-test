@@ -7,8 +7,7 @@ const ProjectCard = ({project}) => {
         thumbnail, 
         proj_info,
         line_after_slug, 
-        proj_text, 
-        action_btn } 
+        proj_text} 
         = styles;
 
     return (
@@ -23,7 +22,7 @@ const ProjectCard = ({project}) => {
                     <h2>{project.title}</h2>
                     <p>{project.excerpt}</p>
                 </div>
-                <div classname={action_btn}>
+                <div className="action_btn">
                     <Button />
                 </div>
             </div>
