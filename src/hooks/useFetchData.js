@@ -13,12 +13,11 @@ const useFetchData = (endpoint) => {
         console.error(error)
       }
     };
-
     fetchData();
-  },);
+  },[]);
 
   return {
-    data,
+    data
   };
 };
 
