@@ -23,7 +23,7 @@ function ProjectPage() {
        <h1>Work</h1>
       </header>
       <ul className='cat-row'>
-      {cat_arr.map(cat => <li>{cat.title}</li>)}
+        {cat_arr.map(cat => <li>{cat.title}</li>)}
       </ul>
       <div className='project-gallery'>
          {cs_arr.map(project => <div className='project-card'><img src={project.thumbnail} alt="project thumbnail"/></div>)}
