@@ -17,6 +17,7 @@ h2
   font-size: 2em
   font-weight: $title-fw
 
+
 h3
   font-size: 0.9em
   font-weight: $slug-fw
@@ -24,17 +25,24 @@ h3
 
 p
   line-height: 1.3
+  font-size: 0.9em
+
+  @media ( min-width: $bkpt-min-lg )
+    font-size: 1em
 
 button 
   color: $main-white
   cursor: pointer
   background-color: transparent
-  border: 2px solid $main-white
+  border: 1px solid $main-white
   font-family: $main-font
-  font-size: 0.9em
+  font-size: 0.8em
   font-weight: $btn-fw
   padding: 8px 12px
   text-transform: uppercase
+
+  @media ( min-width: $bkpt-min-lg )
+    font-size: 0.9em
 
   img 
     margin-left: 8px
@@ -49,15 +57,17 @@ ul
 
   li
     margin-right: 1%
-    list-style: none 
-
+    list-style: none   
 hr
-  border-style: solid    
+  border-style: solid   
 
 // Asset Styles
 .asset-top
   display: flex
   justify-content: flex-end
+
+  .green-dots
+    max-height: 70px
 
 .asset-bottom
   display: flex
@@ -65,18 +75,40 @@ hr
   align-items: flex-end
 
   .dot-circle
-    max-height: 250px
+    max-height: 150px
+    
+    @media ( min-width: $bkpt-min-lg )
+      max-height: 200px
 
   .half-circle
-    max-height: 300px
+    max-height: 150px
+    @media ( min-width: $bkpt-min-lg )
+      max-height: 300px
 
 // Main App Styles
 .page
   max-width: 1280px
   margin: 0 auto
 
+.page-header
+  text-align: center
+
+  @media ( min-width: $bkpt-min-lg )
+    text-align: left
+
 .page-wrapper
-  padding: 0 8%
+  padding: 0 5%
+
+  @media ( min-width: $bkpt-min-lg )
+    padding: 0 8%
+
+.cat-row
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+  @media ( min-width: $bkpt-min-lg )
+    justify-content: left
 
 .cat-btn
   border: 1px solid $bkg-black

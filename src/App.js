@@ -28,19 +28,19 @@ function ProjectPage() {
 
   useEffect(() => { 
     setCat(cat_arr)
-    setActiveCS(cs_arr)
+    setActiveCS(cs_arr) 
   },[]);
 
 return ( 
-    <div className='page'>
+    <div className='page'> 
       <div className='asset-top'>
-        <img src={header_asset} alt=""/>
+        <img src={header_asset} alt="" className='green-dots'/>
       </div>
       <div className="page-wrapper">
         <header className="page-header"> 
         <h1>Work</h1>
-        </header>
-        <ul className='cat-row'> 
+        </header> 
+        <ul className='cat-row'>
           {cat?.map(cat => <li><button className='cat-btn' key={cat.id} onClick={() => setLabel(cat.slug)}>{cat.title}</button></li>)}
         </ul>
         <hr className='cat-after-line'></hr>
@@ -48,12 +48,12 @@ return (
           {activeCS?.map(project => <ProjectCard project={project} key={project.id} />)}
         </div>
       </div>
-      <div className='asset-bottom'>
+      <div className='asset-bottom'> 
         <img src={footer_asset} alt="" className='dot-circle'/>
         <img src={sidebar_asset} alt="" className='half-circle'/>
       </div>
     </div>
   );
 }
-
+ 
 export default ProjectPage;
