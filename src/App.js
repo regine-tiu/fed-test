@@ -11,10 +11,18 @@ const case_studies_ep = process.env.REACT_APP_CASE_STUDIES;
 const cat_ep = process.env.REACT_APP_CATEGORIES;
 
 function ProjectPage() {  
+  // fetching data with hooks (data:{})
   const cs_data = useFetchData(case_studies_ep);
   const cat_data = useFetchData(cat_ep);
+
+  // accessing Case Studies & Category Objects
   const cs_arr = cs_data['data']['case-studies']
   const cat_arr = cat_data['data']['categories']
+
+  // adding an All label to Categories
+  cat_arr.unshift({"title":"All","slug":"all"})
+console.log(cat_arr)
+
 
   const [label, setLabel] = useState("all")
 
@@ -25,7 +33,7 @@ function ProjectPage() {
   useEffect(() => { 
    setActiveCS( cs_arr?.filter( cs => cs.categories[0].slug === label))
   },[label]);
-  
+   
   useEffect(() => { 
     setCat(cat_arr)
     setActiveCS(cs_arr) 
