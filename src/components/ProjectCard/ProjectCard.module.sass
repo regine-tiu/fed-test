@@ -12,8 +12,18 @@
         align-items: flex-start
         padding: 5% 0
 
+    @media ( min-width: $bkpt-min-lg )
+        align-items: flex-start
+        margin-right: 3%
+        padding: 3% 0
+        text-align: left
+        width: 47%
+
     .proj_info
         padding: 3% 4%
+
+        @media ( min-width: $bkpt-min-lg )
+            padding: 0 6% 0
 
     .proj_text
         padding: 2% 0
@@ -26,25 +36,37 @@
         @media ( min-width: $bkpt-min-sm )
             margin-top: 20%
 
+        @media ( min-width: $bkpt-min-md )
+            margin-top: 30%
+        
         @media ( min-width: $bkpt-min-lg )
             justify-content: flex-end 
-            margin-top: 35%
+            margin-top: 20%
 
 .thumbnail
-    height: 68%
     width: 68%
 
     @media ( min-width: $bkpt-min-sm )
-        max-height: 50%
-        max-width: 50%
+        max-width: 55%
+
+    @media ( min-width: $bkpt-min-lg )
+        max-width: 40%
 
 .line
     display: flex
     justify-content: center
 
+    @media ( min-width: $bkpt-min-lg )
+        justify-content: flex-start
+
 .line_after_slug
     margin: 0
     width: 250px
 
+    @media ( min-width: $bkpt-min-lg )
+        width: 225px
+
+    @media ( min-width: $bkpt-min-xl )
+        width: 250px
 
 

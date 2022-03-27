@@ -25,12 +25,12 @@ function ProjectPage() {
   useEffect(() => { 
    setActiveCS( cs_arr?.filter( cs => cs.categories[0].slug === label))
   },[label]);
-
+  
   useEffect(() => { 
     setCat(cat_arr)
     setActiveCS(cs_arr) 
   },[]);
-
+ 
 return ( 
     <div className='page'> 
       <div className='asset-top'>
@@ -39,7 +39,7 @@ return (
       <div className="page-wrapper">
         <header className="page-header"> 
         <h1>Work</h1>
-        </header> 
+        </header>
         <ul className='cat-row'>
           {cat?.map(cat => <li><button className='cat-btn' key={cat.id} onClick={() => setLabel(cat.slug)}>{cat.title}</button></li>)}
         </ul>

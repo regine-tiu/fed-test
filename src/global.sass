@@ -14,7 +14,7 @@ h1
   text-transform: uppercase
 
 h2
-  font-size: 2em
+  font-size: 1.9em
   font-weight: $title-fw
 
 
@@ -22,6 +22,7 @@ h3
   font-size: 0.9em
   font-weight: $slug-fw
   text-transform: uppercase
+  margin: 0.2em 0
 
 p
   line-height: 1.3
@@ -69,6 +70,9 @@ hr
   .green-dots
     max-height: 70px
 
+    @media ( min-width: $bkpt-min-md )
+      max-height: 100px
+
 .asset-bottom
   display: flex
   justify-content: space-between
@@ -77,13 +81,17 @@ hr
   .dot-circle
     max-height: 150px
     
-    @media ( min-width: $bkpt-min-lg )
+    @media ( min-width: $bkpt-min-md )
       max-height: 200px
 
   .half-circle
     max-height: 150px
-    @media ( min-width: $bkpt-min-lg )
+
+    @media ( min-width: $bkpt-min-md )
       max-height: 300px
+
+    @media ( min-width: $bkpt-min-xl )  
+      max-height: 350px
 
 // Main App Styles
 .page
@@ -125,3 +133,9 @@ hr
 .project-gallery
   display: flex
   flex-direction: column
+  width: 100%
+
+  @media ( min-width: $bkpt-min-lg )
+    flex-direction: row
+    flex-wrap: wrap
+    
