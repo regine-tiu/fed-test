@@ -17,8 +17,7 @@ Categoties Endpoint: https://plankdesign.com/wp-json/plank/v1/fed-test/categorie
 A custom hook, useFetchData.js, is used to import the endpoint data into the project
 
 # Sass stylesheets
-This projects main styling can be found in global.sass. 
-
+This projects main styling can be found in global.sass. It's components are styled with [Sass Modules](freecodecamp.org/news/how-to-use-sass-with-css-modules-in-next-js/). All sass files use variables defined in the variables.sass file under the components folder.
 
 
 # Getting Started with Create React App
