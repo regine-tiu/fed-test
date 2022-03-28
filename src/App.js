@@ -19,17 +19,18 @@ function ProjectPage() {
   const cs_arr = cs_data['data']['case-studies']
   const cat_arr = cat_data['data']['categories']
 
-  // adding an All label to Categories
-  const [label, setLabel] = useState("all")
+  // setting default label, categories & active case studies state
+  const [label, setLabel] = useState("all")  
   const [cat, setCat] = useState([])
   const [activeCS, setActiveCS] = useState([])
 
-  // if default label = "all", display all projects; else, display projects with the corresponding label 
+  // if default label = "all", display all projects in cs_arr; else, display projects with the corresponding label 
   useEffect(() => { 
-     if (label === "all") {setActiveCS(cs_arr)}
-     else { setActiveCS( cs_arr?.filter( cs => cs.categories[0].slug === label))}
-   },[label]);
+    if (label === "all") {setActiveCS(cs_arr)}
+    else { setActiveCS( cs_arr.filter( cs => cs.categories[0].slug === label))}
+  },[label]);
    
+  // add an "All" category in front of list of categories
   useEffect(() => { 
     cat_arr.unshift({"title":"All","slug":"all"})
     setCat(cat_arr)
@@ -45,11 +46,11 @@ return (
         <h1>Work</h1>
         </header>
         <ul className='cat-row'>
-          {cat?.map(cat => <li><button className='cat-btn' key={cat.id} onClick={() => setLabel(cat.slug)}>{cat.title}</button></li>)}
+          {cat.map(cat => <li><button className='cat-btn' key={cat.id} onClick={() => setLabel(cat.slug)}>{cat.title}</button></li>)}
         </ul>
         <hr className='cat-after-line'></hr>
         <div className='project-gallery'>
-          {activeCS?.map(project => <ProjectCard project={project} key={project.id} />)}
+          {activeCS.map(project => <ProjectCard project={project} key={project.id} />)}
         </div>
       </div>
       <div className='asset-bottom'> 
