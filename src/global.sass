@@ -17,7 +17,6 @@ h2
   font-size: 1.9em
   font-weight: $title-fw
 
-
 h3
   font-size: 0.9em
   font-weight: $slug-fw
@@ -62,6 +61,24 @@ ul
 hr
   border-style: solid   
 
+
+// ---  Main App Styles --- //
+.page
+  max-width: 1280px
+  margin: 0 auto
+
+.page-header
+  text-align: center
+
+  @media ( min-width: $bkpt-min-lg )
+    text-align: left
+
+.page-wrapper
+  padding: 0 5%
+
+  @media ( min-width: $bkpt-min-lg )
+    padding: 0 8%
+
 // Asset Styles
 .asset-top
   display: flex
@@ -93,23 +110,7 @@ hr
     @media ( min-width: $bkpt-min-xl )  
       max-height: 350px
 
-// Main App Styles
-.page
-  max-width: 1280px
-  margin: 0 auto
-
-.page-header
-  text-align: center
-
-  @media ( min-width: $bkpt-min-lg )
-    text-align: left
-
-.page-wrapper
-  padding: 0 5%
-
-  @media ( min-width: $bkpt-min-lg )
-    padding: 0 8%
-
+// Category Row  
 .cat-row
   display: flex
   flex-wrap: wrap
