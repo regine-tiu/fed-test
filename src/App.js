@@ -15,25 +15,24 @@ function ProjectPage() {
   const cs_data = useFetchData(case_studies_ep);
   const cat_data = useFetchData(cat_ep);
 
-  // accessing Case Studies & Category Objects ([{}, {}])
+  // accessing Case Studies & Category Objects
   const cs_arr = cs_data['data']['case-studies']
   const cat_arr = cat_data['data']['categories']
 
-  // setting default label, categories & active case studies
-  const [label, setLabel] = useState("all")  
+  // adding an All label to Categories
+  const [label, setLabel] = useState("all")
   const [cat, setCat] = useState([])
   const [activeCS, setActiveCS] = useState([])
 
   // if default label = "all", display all projects; else, display projects with the corresponding label 
   useEffect(() => { 
-    if (label === "all") {setActiveCS(cs_arr)}
-    else { setActiveCS( cs_arr?.filter( cs => cs.categories[0].slug === label))}
-  },[label]);
+     if (label === "all") {setActiveCS(cs_arr)}
+     else { setActiveCS( cs_arr?.filter( cs => cs.categories[0].slug === label))}
+   },[label]);
    
   useEffect(() => { 
     cat_arr.unshift({"title":"All","slug":"all"})
     setCat(cat_arr)
-    setActiveCS(cs_arr) 
   },[]);
  
 return ( 
