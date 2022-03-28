@@ -1,8 +1,29 @@
+# Introduction
+
+This is a [React App](https://github.com/facebook/create-react-app). created for Plank Design's Front-end Web Development test. In addition to being a project gallery, the App also allows users to filter the displayed projects according to their tagged categories (ie. Wellness, Art's & Culture, etc). 
+
+Each project is individually displayed with a Project Card component, filtered through a useEffect function, then rendered onto the App. 
+
+# Requirements: fetching data end points
+
+Two data endpoints are required for this project: the Case Studies, and the Categories. 
+
+They can be accessed under the following links:
+
+Case Studies Endpoint: https://plankdesign.com/wp-json/plank/v1/fed-test/case-studies
+
+Categoties Endpoint: https://plankdesign.com/wp-json/plank/v1/fed-test/categories
+
+A custom hook, useFetchData.js, is used to import the endpoint data into the project
+
+# Sass stylesheets
+This projects main styling can be found in global.sass. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
